@@ -1,5 +1,5 @@
 import { MentorCard } from "@/components/MentorCard";
-import { Link } from "react-router-dom"; // Updated to "react-router-dom"
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
@@ -7,13 +7,10 @@ import { BACKEND_URL } from "@/config/env";
 import { MentorClass } from "@/lib/types";
 import {
   ArrowRight,
-  Star,
-  Users,
   BookOpen,
   Award,
-  Zap,
-  CheckCircle,
-} from "lucide-react";
+  Zap
+} from "lucide-react"; // Removed Star, Users, CheckCircle
 
 export default function HomePage() {
   const { isSignedIn } = useAuth();
