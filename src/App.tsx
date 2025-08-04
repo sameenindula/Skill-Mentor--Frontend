@@ -10,6 +10,7 @@ import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import AboutPage from "@/pages/AboutPage";
 import AddMentorPage from "@/pages/AddMentorPage";
 import MentorsPage from "@/pages/MentorsPage";
+import { A } from "node_modules/react-router/dist/development/route-data-CqEmXQub.d.mts";
 function App() {
   return (
     <BrowserRouter>
@@ -48,7 +49,7 @@ function App() {
             element={
               <>
                 <SignedIn>
-                 
+                 <AddMentorPage />
                 </SignedIn>
                 <SignedOut>
                   <LoginPage />
