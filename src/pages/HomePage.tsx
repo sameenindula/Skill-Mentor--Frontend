@@ -1,7 +1,7 @@
 import { MentorCard } from "@/components/MentorCard";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@clerk/clerk-react";
+import { useAuth, useUser } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import { BACKEND_URL } from "@/config/env";
 import { MentorClass } from "@/lib/types";
@@ -10,11 +10,14 @@ import {
   BookOpen,
   Award,
   Zap
-} from "lucide-react"; // Removed Star, Users, CheckCircle
+} from "lucide-react";
 
 export default function HomePage() {
   const { isSignedIn } = useAuth();
+  const { user } = useUser(); // Get current user
   const [mentorClasses, setMentorClasses] = useState<MentorClass[]>([]);
+
+  const userRole = user?.publicMetadata?.role; // Assuming role is stored here
 
   useEffect(() => {
     async function fetchMentorClasses() {
@@ -50,21 +53,26 @@ export default function HomePage() {
                 Go to Dashboard <ArrowRight size={18} />
               </Button>
             </Link>
-            <Link to="/add-classroom">
-              <Button size="lg" className="text-lg flex gap-2 items-center">
-                Add ClassRoom <BookOpen size={18} />
-              </Button>
-            </Link>
-            <Link to="/add-mentor">
-              <Button size="lg" className="text-lg flex gap-2 items-center">
-                Add Mentor <Award size={18} />
-              </Button>
-            </Link>
-            <Link to="/session-management">
-              <Button size="lg" className="text-lg flex gap-2 items-center">
-                Session Management <Zap size={18} />
-              </Button>
-            </Link>
+
+            {userRole === "ADMIN" && (
+              <>
+                <Link to="/add-classroom">
+                  <Button size="lg" className="text-lg flex gap-2 items-center">
+                    Add ClassRoom <BookOpen size={18} />
+                  </Button>
+                </Link>
+                <Link to="/add-mentor">
+                  <Button size="lg" className="text-lg flex gap-2 items-center">
+                    Add Mentor <Award size={18} />
+                  </Button>
+                </Link>
+                <Link to="/session-management">
+                  <Button size="lg" className="text-lg flex gap-2 items-center">
+                    Session Management <Zap size={18} />
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
         ) : (
           <Link to="/login">
