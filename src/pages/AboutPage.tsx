@@ -1,19 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router";
-import { 
-  Users, 
-  Target, 
-  Award, 
-  Heart, 
-  Globe, 
-  TrendingUp, 
-  BookOpen, 
-  Star,
+import { Link } from "react-router-dom"; 
+import {
+  Users,
+  Target,
+  Award,
+  Heart,
+  Globe,
+  TrendingUp,
   ArrowRight,
-  CheckCircle,
-  Lightbulb,
   Zap
 } from "lucide-react";
 
@@ -247,68 +243,6 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Meet Our Team</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The passionate individuals behind SkillMentor's mission to democratize expert knowledge
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">S</span>
-                </div>
-                <CardTitle>Sarah Johnson</CardTitle>
-                <p className="text-sm text-muted-foreground">CEO & Founder</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Former tech executive with 15+ years experience in education technology and 
-                  a passion for democratizing access to expert knowledge.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">M</span>
-                </div>
-                <CardTitle>Michael Chen</CardTitle>
-                <p className="text-sm text-muted-foreground">CTO</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Engineering leader with expertise in building scalable platforms and 
-                  creating seamless user experiences for learning communities.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">E</span>
-                </div>
-                <CardTitle>Emma Rodriguez</CardTitle>
-                <p className="text-sm text-muted-foreground">Head of Community</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Community builder with a background in education and a deep understanding 
-                  of what makes mentorship relationships successful.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
